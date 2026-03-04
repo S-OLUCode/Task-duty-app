@@ -38,13 +38,13 @@ export default function Newtask() {
           ></textarea>
         </div>
         <div className="flex justify-between py-4 border border-gray-200 mb-8">
-          <label htmlFor="" className="text-gray-500 pl-2">
+          <label htmlFor="" className="text-gray-500 pl-2 pt-1">
             Tags
           </label>
           <select
             name=""
             id=""
-            className="border border-purple-500 text-purple-500 outline-none"
+            className="border border-purple-500 text-purple-500 outline-none px-1 py-1 mx-2"
           >
             <option value="">Select options</option>
             <option value="Urgent">Urgent</option>
