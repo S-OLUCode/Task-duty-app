@@ -15,30 +15,30 @@ export default function Newtask() {
         <h1 className="text-2xl font-semibold">New Task</h1>
       </div>
       <form className="flex flex-col gap-6 w-full space-y-4">
-        <div className="flex flex-col">
-          <label htmlFor="" className="pl-6 font-medium text-gray-500">
+        <div className="flex flex-col relative mt-3">
+          <label className="absolute -top-3 left-8 md:pl-0 text-gray-400 bg-white">
             Task Title
           </label>
           <input
             type="text"
             placeholder="E.g Project Defense, Assignment ..."
-            className=" py-4 px-2 outline-none w-full border border-gray-200"
+            className=" py-4 px-2 outline-none w-full border border-gray-300 pl-8 pt-4"
           />
         </div>
-        <div>
-          <label htmlFor="" className="pl-6 font-medium text-gray-500">
+        <div className="relative mt-6">
+          <label className="absolute -top-4 left-8 md:pl-0 text-center text-xl text-gray-400 bg-white w-max">
             Description
           </label>
           <textarea
             name=""
             id=""
             placeholder="Briefly describe your task..."
-            className="border border-gray-200 outline-none resize-none w-full pl-2 pt-2"
+            className="border border-gray-300 outline-none resize-none w-full pl-8 pt-4"
             rows={5}
           ></textarea>
         </div>
-        <div className="flex justify-between py-4 border border-gray-200 mb-8">
-          <label htmlFor="" className="text-gray-500 pl-2 pt-1">
+        <div className=" flex relative justify-end py-4 border border-gray-200 mb-8">
+          <label className="absolute -top-5 left-8 bg-white text-xl text-gray-400 md:pl-0 pt-1">
             Tags
           </label>
           <select

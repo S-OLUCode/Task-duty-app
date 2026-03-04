@@ -40,7 +40,7 @@ export default function Nav() {
         <img
           src="/WhatsApp Image 2025-10-30 at 07.53.07.jpeg"
           alt="Profile"
-          className="w-8 h-8 rounded-full hidden md:block"
+          className="w-10 h-10 rounded-full mr-2"
         />
 
         {/* Mobile Drawer */}
