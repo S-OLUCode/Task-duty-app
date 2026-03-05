@@ -8,7 +8,7 @@ export default function Drawer() {
   return (
     <>
       <Menu
-        className="md:hidden text-black cursor-pointer"
+        className="md:hidden text-purple-500 cursor-pointer"
         onClick={() => setIsOpen(true)}
       />
       <div

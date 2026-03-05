@@ -7,7 +7,7 @@ export default function Rootlayout() {
   return (
       <>
       <Nav />
-      <hr className="border-t border-gray-400"/>
+      <hr className="border-t border-gray-300"/>
       <Link/>
       <Outlet/>
     </>
