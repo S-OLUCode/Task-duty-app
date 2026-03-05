@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Newtask() {
   return (
-    <div className="max-w-[1268px] mx-auto w-full md:p-0 px-3" id="top">
+    <div className="max-w-[1268px] mx-auto w-full lg:p-0 md:px-3 px-3" id="top">
       <div className="flex items-center gap-1 md:my-8 my-6">
         <Link to="/">
           <img

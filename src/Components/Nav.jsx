@@ -4,11 +4,11 @@ import Drawer from "./Drawer";
 export default function Nav() {
   const links = [
     { id: 1, path: "/auth/newtask", name: "New Task" },
-    { id: 2, path: "/auth/alltask", name: "All Tasks" },
+    { id: 2, path: "/auth/gotomytasks", name: "All Tasks" },
   ];
 
   return (
-    <div className="max-w-[1268px] mx-auto p-4 flex justify-between items-center">
+    <div className="max-w-[1268px] mx-auto p-4 lg:py-3 md:py-6 py-4 flex justify-between items-center">
       {/* Logo */}
       <NavLink to="/">
         <img
@@ -40,7 +40,7 @@ export default function Nav() {
         <img
           src="/WhatsApp Image 2025-10-30 at 07.53.07.jpeg"
           alt="Profile"
-          className="w-10 h-10 rounded-full mr-2"
+          className="w-14 h-14 rounded-full mr-2"
         />
 
         {/* Mobile Drawer */}

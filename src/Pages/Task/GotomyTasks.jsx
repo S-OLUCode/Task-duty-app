@@ -2,7 +2,7 @@ import { Link  } from "react-router-dom";
 
 export default function GotomyTasks() {
   return (
-    <div className="max-w-[1268px] mx-auto space-y-10 md:p-0 px-3">
+    <div className="max-w-[1268px] mx-auto space-y-10 lg:px-0 md:px-5 px-3">
       <div className="flex justify-between my-10">
         <div>
           <h1 className="text-4xl">My Tasks</h1>
@@ -18,9 +18,9 @@ export default function GotomyTasks() {
           <p className="mt-3 text-[17px] text-red-300">Urgent</p>
           <div className="flex gap-2">
             <div className="">
-              <button className="bg-purple-600 py-1 px-4 border-purple-600 text-white rounded-sm flex gap-2"><img src="/clarity.png" alt="" />
+              <Link to="/auth/alltask" className="bg-purple-600 py-1 px-4 border-purple-600 text-white rounded-sm flex gap-2"><img src="/clarity.png" alt="" />
                 Edit
-              </button>
+              </Link>
             </div>
             <div  >
               <button className="py-1 px-2 border border-purple-600 text-purple-600 rounded-sm flex gap-2"><img src="/trashIcon.jpg" alt="" />Delete</button>
@@ -37,9 +37,9 @@ export default function GotomyTasks() {
           <p className="mt-3 text-[17px] text-green-300">Important</p>
           <div className="flex gap-2">
             <div className="">
-              <button className="bg-purple-600 py-1 px-4 border-purple-600 text-white rounded-sm flex gap-2"><img src="/clarity.png" alt="" />
+             <Link to="/auth/alltask" className="bg-purple-600 py-1 px-4 border-purple-600 text-white rounded-sm flex gap-2"><img src="/clarity.png" alt="" />
                 Edit
-              </button>
+              </Link>
             </div>
             <div  >
               <button className="py-1 px-2 border border-purple-600 text-purple-600 rounded-sm flex gap-2"><img src="/trashIcon.jpg" alt="" />Delete</button>
@@ -56,9 +56,9 @@ export default function GotomyTasks() {
           <p className="mt-3 text-[17px] text-red-300">Urgent</p>
           <div className="flex gap-2">
             <div className="">
-              <button className="bg-purple-600 py-1 px-4 border-purple-600 text-white rounded-sm flex gap-2"><img src="/clarity.png" alt="" />
+              <Link to="/auth/alltask" className="bg-purple-600 py-1 px-4 border-purple-600 text-white rounded-sm flex gap-2"><img src="/clarity.png" alt="" />
                 Edit
-              </button>
+              </Link>
             </div>
             <div  >
               <button className="py-1 px-2 border border-purple-600 text-purple-600 rounded-sm flex gap-2"><img src="/trashIcon.jpg" alt="" />Delete</button>
@@ -75,9 +75,9 @@ export default function GotomyTasks() {
           <p className="mt-3 text-[17px] text-green-300">Important</p>
           <div className="flex gap-2">
             <div className="">
-              <button className="bg-purple-600 py-1 px-4 border-purple-600 text-white rounded-sm flex gap-2"><img src="/clarity.png" alt="" />
+              <Link to="/auth/alltask" className="bg-purple-600 py-1 px-4 border-purple-600 text-white rounded-sm flex gap-2"><img src="/clarity.png" alt="" />
                 Edit
-              </button>
+              </Link>
             </div>
             <div  >
               <button className="py-1 px-2 border border-purple-600 text-purple-600 rounded-sm flex gap-2"><img src="/trashIcon.jpg" alt="" />Delete</button>
@@ -90,7 +90,7 @@ export default function GotomyTasks() {
       </div>
        <a
           href="#top"
-         className="underline text-purple-500 md:pb-1 pb-2 md:mt-8 pt-2 text-center w-full block"
+         className="underline text-purple-500 lg:pb-1 md:pb-4 pb-2 md:mt-8 pt-2 text-center w-full block"
         >
           Back To Top
         </a>

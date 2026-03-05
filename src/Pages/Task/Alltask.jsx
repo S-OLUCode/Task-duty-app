@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Alltask() {
   return (
-    <div className="max-w-[1268px] mx-auto w-full md:px-0 px-3" id="top">
+    <div className="max-w-[1268px] mx-auto w-full lg:px-0 md:px-12 px-3" id="top">
       <div className="flex items-center gap-1 md:my-7 my-6">
         <Link to="/">
           <img
@@ -15,7 +15,7 @@ export default function Alltask() {
         <h1 className="text-2xl font-semibold">Edit Task</h1>
       </div>
       <form className="flex flex-col gap-6 w-full space-y-4">
-        <div className="flex flex-col relative mt-3">
+        <div className="flex flex-col relative md:mt-4 mt-3">
           <label className="absolute -top-3 left-8 md:pl-0 text-gray-400 bg-white text-md">
             Task Title
           </label>

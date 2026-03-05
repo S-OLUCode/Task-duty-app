@@ -53,7 +53,7 @@ export default function Drawer() {
               </Link>
 
               <Link
-                to="/auth/alltask"
+                to="/auth/gotomytasks"
                 onClick={() => setIsOpen(false)}
                 className="text-black font-medium text-2xl"
               >
