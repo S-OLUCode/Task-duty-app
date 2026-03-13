@@ -60,16 +60,16 @@ export default function Login() {
 
       <form className="mt-2" onSubmit={handleSubmit(onSubmitForm)}>
         <div className="mb-4">
-          <span className="text-sm">Email</span>
+          <span className="text-sm">username</span>
           <input
-            type="email"
-            placeholder="Email"
-            {...register("email")}
+            type="text"
+            placeholder="Username"
+            {...register("username")}
             className="input input-md input-primary px-4 py-2 rounded-lg bg-white text-black w-full"
           />
 
-          {errors.email && (
-            <p className="text-red-500 text-sm">{errors.email.message}</p>
+          {errors.username && (
+            <p className="text-red-500 text-sm">{errors.username.message}</p>
           )}
         </div>
 
