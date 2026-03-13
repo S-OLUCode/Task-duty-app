@@ -39,8 +39,8 @@ export default function Register() {
 
   return (
     <div className="max-w-115.25 mx-auto px-8">
-      <div className="flex justify-center mt-35">
-        <Link to="/" className="w-[300px] pl-15">
+      <div className="flex justify-center md:mt-35 lg:mt-35 mt-22">
+        <Link to="/" className="w-[300px] pl-13 lg:pl-13 md:pl-12">
           <img
             src="https://task-duty-proj-client.vercel.app/assets/logo-cQYmEuE8.svg"
             alt="Logo"
@@ -49,18 +49,18 @@ export default function Register() {
       </div>
 
       <div className="py-4">
-        <div className="text-black mt-4 flex flex-col justify-center">
-          <div className="pb-2 mb-2 px-8 py-2">
-            <h1 className="text-md text-2xl font-bold">Register</h1>
-            <p className="py-2 text-sm">
+        <div className="text-black mt-2 flex flex-col justify-center">
+          <div className="lg:pb-2 md:pb-8 mb-2 px-8 py-2">
+            <h1 className="text-md text-2xl md:text-3xl font-bold mb-2 mt-0 md:mt-0 lg:mt-0 md:mb-0 lg:mb-0">Register</h1>
+            <p className="lg:py-2 lg:text-sm md:text-sm text-xs">
               Enter Your Information To Register An Account!
             </p>
           </div>
 
           <form className="" onSubmit={handleSubmit(onSubmitForm)}>
-            <div className="w-75% px-8">
+            <div className="w-75% px-2 ">
               {/* Email */}
-              <div className="mb-4">
+              <div className="mb-4 lg:mb-1 md:py-4">
                 <input
                   type="email"
                   placeholder="Email"
@@ -73,7 +73,7 @@ export default function Register() {
               </div>
 
               {/* Username */}
-              <div className="mb-4">
+              <div className="mb-4 lg:mb-1 md:py-2">
                 <input
                   type="text"
                   placeholder="Username"
@@ -86,7 +86,7 @@ export default function Register() {
               </div>
 
               {/* Password */}
-              <div className="mb-4">
+              <div className="mb-4 lg:mb-4 md:py-4">
                 <input
                   type="password"
                   placeholder="Password"
@@ -102,7 +102,7 @@ export default function Register() {
               <button
                 type="submit"
                 disabled={mutation.isPending}
-                className="w-full rounded-lg py-3 mt-7 bg-purple-500 text-white flex items-center justify-center text-md"
+                className="w-full rounded-lg py-3 lg:mt-5 md:mt-5 mt-7 bg-purple-500 text-white flex items-center justify-center text-md"
               >
                 {mutation.isPending ? (
                   <>

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react"; // make sure these are installed
+import { LogOutIcon, Menu, X } from "lucide-react"; // make sure these are installed
 import { useAuth } from "../hooks/useAuth";
+import { LogOut } from "lucide-react";
 
 
 export default function Drawer({ handleLogout }) {
@@ -13,7 +14,7 @@ export default function Drawer({ handleLogout }) {
   return (
     <>
       <Menu
-        className="md:hidden text-purple-500 cursor-pointer"
+        className="md:hidden text-purple-500 cursor-pointer mr-2"
         onClick={() => setIsOpen(true)}
       />
       <div
@@ -36,7 +37,7 @@ export default function Drawer({ handleLogout }) {
             className="drawer-overlay"
             onClick={() => setIsOpen(false)}
           ></label>
-          <div className="menu text-base-content min-h-full w-75 p-4 relative">
+          <div className="menu text-base-content min-h-full w-75 p-2 relative">
             <Link to="/" className="font-bold text-xl mt-3 inline-block">
               <img
                 src="https://task-duty-proj-client.vercel.app/assets/logo-cQYmEuE8.svg"
@@ -52,7 +53,8 @@ export default function Drawer({ handleLogout }) {
 
             {user ? (
               <div className="mt-2 text-black">
-                <p className="text-sm">Hi, {user.username}</p>
+                <p className="text-2xl mt-4">Hi, {user.username}</p>
+                <hr className="text-purple-500 font-bold mt-3"/>
                 <div className="mt-6 flex flex-col gap-4">
                   <Link
                     to="/auth/newtask"
@@ -68,13 +70,17 @@ export default function Drawer({ handleLogout }) {
                   >
                     All Tasks
                   </Link>
-                   <a
+                   <div className="flex items-center gap-2 mt-4 text-red-500 absolute bottom-0">
+                    
+                    <a
                     href="#"
                     onClick={handleLogout}
-                    className="font-medium text-xl"
+                    className=" font-medium text-2xl "
                   >
                     Logout
                   </a>
+                  <LogOutIcon size={20} />
+                   </div>
                 </div>
               </div>
             ) : (

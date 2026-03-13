@@ -73,14 +73,6 @@ export default function Nav() {
           )}
         </div>
 
-        {/* Profile Image */}
-
-        {/* <img
-          src="/WhatsApp Image 2025-10-30 at 07.53.07.jpeg"
-          alt="Profile"
-          className="w-14 h-14 rounded-full mr-2"
-        /> */}
-
         {/* Mobile Drawer */}
         <div className="md:hidden">
           <Drawer handleLogout={handleLogout} />

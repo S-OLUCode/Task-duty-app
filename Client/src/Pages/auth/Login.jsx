@@ -44,9 +44,9 @@ export default function Login() {
     mutation.mutate(data);
   };
   return (
-    <div className="max-w-[400px] mt-10 lg:mt-25 mx-auto text-wash-white rounded-lg px-8 py-6">
+    <div className="max-w-[400px] mt-16 lg:mt-25 md:mt-50 mx-auto text-wash-white rounded-lg px-8 py-6">
       <div className="flex justify-center">
-        <Link to="/" className="w-[300px] pl-4">
+        <Link to="/" className="w-[300px] pl-4 lg:pl-4 md:pl-4">
           <img
             src="https://task-duty-proj-client.vercel.app/assets/logo-cQYmEuE8.svg"
             alt="Logo"

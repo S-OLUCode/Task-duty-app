@@ -6,7 +6,7 @@ export default function UserAvatar() {
   const { user, handleLogout } = useAuth();
   return (
     <div className="flex gap-4 items-center">
-      <img src="/Group 6.jpeg" alt="profile picture" className="w-12" />
+      <img src="/Group 6.jpeg" alt="profile picture" className="w-12 x-0" />
       <div className="hidden md:block dropdown dropdown-end">
         <div
           tabIndex={0}
