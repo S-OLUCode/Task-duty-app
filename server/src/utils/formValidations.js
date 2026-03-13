@@ -25,8 +25,8 @@ export const validateregisterUserSchema = z.object({
 });
 
 export const validateLoginUserSchema = z.object({
-  email: z.string().email({
-    message: "invalid email address",
+  username: z.string().min(5, {
+    message: "Username must be at least 5 characters long",
   }),
   password: z
     .string()

@@ -1,7 +1,9 @@
 import z from "zod";
 
 export const validateLogInSchema = z.object({
-  email: z.string().min(1, "Email is required").email("Invalid email"),
+  username: z.string().min(5, {
+      message: "Username must be at least 5 characters long",
+    }),
 
   password: z
     .string()

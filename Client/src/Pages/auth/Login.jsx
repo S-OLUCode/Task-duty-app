@@ -60,7 +60,7 @@ export default function Login() {
 
       <form className="mt-2" onSubmit={handleSubmit(onSubmitForm)}>
         <div className="mb-4">
-          <span className="text-sm">username</span>
+          <span className="text-sm">Username</span>
           <input
             type="text"
             placeholder="Username"
