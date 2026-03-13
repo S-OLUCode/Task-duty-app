@@ -8,8 +8,11 @@ import { registerUser } from "../../api/auth.js";
 import { Loader } from "lucide-react";
 import { toast } from "react-toastify";
 import { useAuth } from "../../hooks/useAuth.js";
+import { Eye, EyeOff } from "lucide-react";
+import { useState } from "react";
 
 export default function Register() {
+  const [revealPassword, setRevealPassword] = useState(false);
   const {
     handleSubmit,
     register,
@@ -19,6 +22,11 @@ export default function Register() {
   });
 
   const { setAccessToken } = useAuth();
+
+  const togglePasswordReveal = (e) => {
+    e.preventDefault();
+    setRevealPassword((prev) => !prev);
+  };
 
   const mutation = useMutation({
     mutationFn: registerUser,
@@ -39,7 +47,7 @@ export default function Register() {
 
   return (
     <div className="max-w-115.25 mx-auto px-8">
-      <div className="flex justify-center md:mt-35 lg:mt-35 mt-22">
+      <div className="flex justify-center md:mt-35 lg:mt-25 mt-20">
         <Link to="/" className="w-[300px] pl-13 lg:pl-13 md:pl-12">
           <img
             src="https://task-duty-proj-client.vercel.app/assets/logo-cQYmEuE8.svg"
@@ -51,7 +59,9 @@ export default function Register() {
       <div className="py-4">
         <div className="text-black mt-2 flex flex-col justify-center">
           <div className="lg:pb-2 md:pb-8 mb-2 px-8 py-2">
-            <h1 className="text-md text-2xl md:text-3xl font-bold mb-2 mt-0 md:mt-0 lg:mt-0 md:mb-0 lg:mb-0">Register</h1>
+            <h1 className="text-md text-2xl md:text-3xl font-bold mb-2 mt-0 md:mt-0 lg:mt-0 md:mb-0 lg:mb-0">
+              Register
+            </h1>
             <p className="lg:py-2 lg:text-sm md:text-sm text-xs">
               Enter Your Information To Register An Account!
             </p>
@@ -60,12 +70,13 @@ export default function Register() {
           <form className="" onSubmit={handleSubmit(onSubmitForm)}>
             <div className="w-75% px-2 ">
               {/* Email */}
-              <div className="mb-4 lg:mb-1 md:py-4">
+              <div className="mb- lg:mb-1 md:py-4">
+                <span className="text-sm">Email</span>
                 <input
                   type="email"
                   placeholder="Email"
                   {...register("email")}
-                  className="input input-md input-primary px-4 py-4 bg-white text-black w-full"
+                  className="input input-md input-primary px-4 py-3 bg-white text-black w-full"
                 />
                 {errors.email && (
                   <p className="text-red-500 text-sm">{errors.email.message}</p>
@@ -74,6 +85,7 @@ export default function Register() {
 
               {/* Username */}
               <div className="mb-4 lg:mb-1 md:py-2">
+                <span className="text-sm">Username</span>
                 <input
                   type="text"
                   placeholder="Username"
@@ -81,28 +93,41 @@ export default function Register() {
                   className="input input-md input-primary px-4 py-4 bg-white text-black w-full"
                 />
                 {errors.username && (
-                  <p className="text-red-500 text-sm">{errors.username.message}</p>
+                  <p className="text-red-500 text-sm">
+                    {errors.username.message}
+                  </p>
                 )}
               </div>
 
               {/* Password */}
-              <div className="mb-4 lg:mb-4 md:py-4">
+
+              <div className="relative">
+                <span className="text-sm">Password</span>
                 <input
-                  type="password"
+                  type={revealPassword ? "text" : "password"}
                   placeholder="Password"
                   {...register("password")}
-                  className="input input-md input-primary px-4 py-4 bg-white text-black w-full"
+                  className="input input-md input-primary px-4 py-2 rounded-lg bg-white text-black w-full"
                 />
+                <button
+                  type="button"
+                  onClick={togglePasswordReveal}
+                  className="absolute right-2 top-8 text-gray-400 z-10"
+                >
+                  {revealPassword ? <EyeOff size={30} /> : <Eye size={25} />}
+                </button>
+
                 {errors.password && (
-                  <p className="text-red-500 text-sm">{errors.password.message}</p>
+                  <p className="text-red-500 text-sm">
+                    {errors.password.message}
+                  </p>
                 )}
               </div>
-
               {/* Submit Button */}
               <button
                 type="submit"
                 disabled={mutation.isPending}
-                className="w-full rounded-lg py-3 lg:mt-5 md:mt-5 mt-7 bg-purple-500 text-white flex items-center justify-center text-md"
+                className="w-full rounded-md py-3 lg:mt-5 md:mt-5 mt-7 bg-purple-500 text-white flex items-center justify-center text-md"
               >
                 {mutation.isPending ? (
                   <>
