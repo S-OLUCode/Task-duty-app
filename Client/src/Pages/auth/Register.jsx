@@ -58,7 +58,7 @@ export default function Register() {
 
       <div className="py-4">
         <div className="text-black mt-2 flex flex-col justify-center">
-          <div className="lg:pb-2 md:pb-8 mb-2 px-8 py-2">
+          <div className="lg:pb-0 md:pb-8 mb-2 px-8 py-2">
             <h1 className="text-md text-2xl md:text-3xl font-bold mb-2 mt-0 md:mt-0 lg:mt-0 md:mb-0 lg:mb-0">
               Register
             </h1>
@@ -68,15 +68,15 @@ export default function Register() {
           </div>
 
           <form className="" onSubmit={handleSubmit(onSubmitForm)}>
-            <div className="w-75% px-2 ">
+            <div className="w-75% px-2 lg:mt-0 md:mt-0">
               {/* Email */}
-              <div className="mb- lg:mb-1 md:py-4">
+              <div className="mb-2 md:mb-0 lg:mb-1 md:py-4">
                 <span className="text-sm">Email</span>
                 <input
                   type="email"
                   placeholder="Email"
                   {...register("email")}
-                  className="input input-md input-primary px-4 py-3 bg-white text-black w-full"
+                  className="input input-md input-primary px-4 bg-white text-black w-full"
                 />
                 {errors.email && (
                   <p className="text-red-500 text-sm">{errors.email.message}</p>
@@ -84,7 +84,7 @@ export default function Register() {
               </div>
 
               {/* Username */}
-              <div className="mb-4 lg:mb-1 md:py-2">
+              <div className="mb-2 lg:mb-2 md:mb-2 md:py-2">
                 <span className="text-sm">Username</span>
                 <input
                   type="text"
@@ -101,18 +101,18 @@ export default function Register() {
 
               {/* Password */}
 
-              <div className="relative">
+              <div className="relative mb-2 lg:mb-1 md:mb-3 md:py-2">
                 <span className="text-sm">Password</span>
                 <input
                   type={revealPassword ? "text" : "password"}
                   placeholder="Password"
                   {...register("password")}
-                  className="input input-md input-primary px-4 py-2 rounded-lg bg-white text-black w-full"
+                  className="input input-md input-primary px-4 py-4 rounded-lg bg-white text-black w-full"
                 />
                 <button
                   type="button"
                   onClick={togglePasswordReveal}
-                  className="absolute right-2 top-8 text-gray-400 z-10"
+                  className="absolute right-2 md:top-8 lg:top-10 top-8 text-gray-500 z-10"
                 >
                   {revealPassword ? <EyeOff size={30} /> : <Eye size={25} />}
                 </button>
