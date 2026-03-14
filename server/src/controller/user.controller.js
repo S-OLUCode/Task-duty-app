@@ -40,7 +40,7 @@ export const registerUser = async (req, res, next) => {
     return responseHandler.successResponse(
       res,
       accessToken,
-      "Account registered! Please login",
+      "Account Registered successfully! Please log in.",
       201
     );
   } catch (error) {

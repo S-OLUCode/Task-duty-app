@@ -33,7 +33,7 @@ export default function Register() {
   const mutation = useMutation({
     mutationFn: registerUser,
     onSuccess: (res) => {
-      toast.success(res.data.message || "Account Registered. Please log in.");
+      toast.success(res.data.message || "Account Registered successfully! Please log in.");
       navigate("/auth/login"); // redirect to login after successful registration
     },
     onError: (error) => {
