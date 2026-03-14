@@ -10,9 +10,11 @@ import { toast } from "react-toastify";
 import { useAuth } from "../../hooks/useAuth.js";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const [revealPassword, setRevealPassword] = useState(false);
+  const navigate = useNavigate();
   const {
     handleSubmit,
     register,
@@ -31,8 +33,8 @@ export default function Register() {
   const mutation = useMutation({
     mutationFn: registerUser,
     onSuccess: (res) => {
-      toast.success(res.data.message || "Registration successful");
-      setAccessToken(res.data.data);
+      toast.success(res.data.message || "Account created successfully. Please log in.");
+      navigate("/auth/login"); // redirect to login after successful registration
     },
     onError: (error) => {
       console.error(error);
