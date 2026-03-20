@@ -38,10 +38,15 @@ export default function GotomyTasks() {
   const tasks = data?.data?.data || [];
 
   // --- NEW SEARCH FILTER LOGIC ---
-  const filteredTasks = tasks.filter((task) =>
-    task.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    task.tags.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredTasks = tasks
+    // 1. Create a shallow copy and sort by date (Newest First)
+    .slice() 
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+    // 2. Filter by search query
+    .filter((task) =>
+      task.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      task.tags.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
   const confirmDelete = () => {
     if (taskToDelete) {
