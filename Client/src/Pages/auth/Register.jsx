@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { validateregisterSchema } from "../../utils/dataschema.js";
+import { validateregisterSchema } from "../../utils/dataSchema.js";
 import { useMutation } from "@tanstack/react-query";
 import { registerUser } from "../../api/auth.js";
 import { Loader } from "lucide-react";
