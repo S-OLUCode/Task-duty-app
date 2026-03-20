@@ -31,7 +31,7 @@ export default function AppRoutes() {
           ),
         },
         {
-          path: "auth/alltask",
+          path: "auth/alltask/:id",
           element: (
             <PrivateRoute accessToken={accessToken}>
               <Alltask />

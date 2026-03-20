@@ -12,6 +12,7 @@ import {
 
 //import api routes
 import userRoutes from "./src/routes/user.routes.js";
+import taskRoutes from "./src/routes/task.routes.js";
 // import bookingRoutes from "./src/routes/booking.routes.js";
 // import paymentRoutes from "./src/routes/payment.routes.js";
 // import { rateLimiter } from "./src/middleware/rateLimit.js";
@@ -64,6 +65,8 @@ app.get("/", (req, res) => {
 
 //assemble api routes
 app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/task", taskRoutes);
+app.use("/api/v1/task/update/:id", taskRoutes);
 // app.use("/api/v1/booking", bookingRoutes);
 // app.use("/api/v1/payment", paymentRoutes);
 // app.use("/api/v1/admin", adminRoutes);

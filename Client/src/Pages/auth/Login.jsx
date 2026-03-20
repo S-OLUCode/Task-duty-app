@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { validateLogInSchema } from "../../utils/dataSchema.js";
+import { validateLogInSchema } from "../../utils/dataschema.js";
 import { useMutation } from "@tanstack/react-query";
 import { loginUser } from "../../api/auth.js";
 import { toast } from "react-toastify";
@@ -30,8 +30,8 @@ export default function Login() {
   const mutation = useMutation({
     mutationFn: loginUser,
     onSuccess: (res) => {
+      setAccessToken(res.data.data); // store token in context
       toast.success(res.data.message || "Login successful");
-      setAccessToken(res.data.data);
       navigate("/"); // redirect after login
     },
     onError: (error) => {

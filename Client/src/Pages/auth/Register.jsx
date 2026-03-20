@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { validateregisterSchema } from "../../utils/dataSchema.js";
+import { validateregisterSchema } from "../../utils/dataschema.js";
 import { useMutation } from "@tanstack/react-query";
 import { registerUser } from "../../api/auth.js";
 import { Loader } from "lucide-react";
@@ -34,6 +34,7 @@ export default function Register() {
     mutationFn: registerUser,
     onSuccess: (res) => {
       toast.success(res.data.message || "Account Registered successfully! Please log in.");
+      setAccessToken(res.data.data);
       navigate("/auth/login"); // redirect to login after successful registration
     },
     onError: (error) => {
