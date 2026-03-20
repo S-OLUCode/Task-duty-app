@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { validateLogInSchema } from "../../utils/dataschema.js";
+import { validateLogInSchema } from "../../utils/dataSchema.js";
 import { useMutation } from "@tanstack/react-query";
 import { loginUser } from "../../api/auth.js";
 import { toast } from "react-toastify";
