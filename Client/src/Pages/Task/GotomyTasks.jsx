@@ -37,15 +37,15 @@ export default function GotomyTasks() {
 
   const tasks = data?.data?.data || [];
 
-  // --- NEW SEARCH FILTER LOGIC ---
   const filteredTasks = tasks
-    // 1. Create a shallow copy and sort by date (Newest First)
-    .slice() 
+
+    .slice()
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-    // 2. Filter by search query
-    .filter((task) =>
-      task.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      task.tags.toLowerCase().includes(searchQuery.toLowerCase())
+
+    .filter(
+      (task) =>
+        task.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        task.tags.toLowerCase().includes(searchQuery.toLowerCase()),
     );
 
   const confirmDelete = () => {
@@ -67,7 +67,9 @@ export default function GotomyTasks() {
       <div className="flex justify-between my-10">
         <h1 className="text-4xl">My Tasks</h1>
         <Link to="/auth/newtask">
-          <p className="text-xl text-purple-600 pt-3 font-medium">+ Add new task</p>
+          <p className="text-xl text-purple-600 pt-3 font-medium">
+            + Add new task
+          </p>
         </Link>
       </div>
 
@@ -81,24 +83,41 @@ export default function GotomyTasks() {
           className="w-full py-4 pl-12 pr-4 border border-gray-300 rounded-lg outline-none focus:border-purple-600 transition-all shadow-sm"
         />
         <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
           </svg>
         </div>
       </div>
 
-      {/* --- UPDATED MAPPING (Using filteredTasks) --- */}
       {filteredTasks?.length === 0 ? (
         <p className="text-center text-gray-500 py-10">
-          {searchQuery ? `No tasks found matching "${searchQuery}"` : "No tasks yet. Start by creating one!"}
+          {searchQuery
+            ? `No tasks found matching "${searchQuery}"`
+            : "No tasks yet. Start by creating one!"}
         </p>
       ) : (
         filteredTasks.map((task) => (
-          <div key={task._id} className="border border-gray-300 rounded-md px-3 mb-6">
+          <div
+            key={task._id}
+            className="border border-gray-300 rounded-md px-3 mb-6"
+          >
             <div className="flex justify-between py-4">
-              <p className={`mt-3 text-[17px] font-semibold ${
+              <p
+                className={`mt-3 text-[17px] font-semibold ${
                   task.tags === "Urgent" ? "text-red-500" : "text-green-500"
-                }`}>
+                }`}
+              >
                 {task.tags}
               </p>
 
@@ -123,7 +142,9 @@ export default function GotomyTasks() {
 
             <hr className="text-gray-300" />
             <h2 className="py-3 text-3xl font-medium">{task.title}</h2>
-            <p className="text-justify text-gray-700 pb-6">{task.description}</p>
+            <p className="text-justify text-gray-700 pb-6">
+              {task.description}
+            </p>
           </div>
         ))
       )}
@@ -136,7 +157,8 @@ export default function GotomyTasks() {
         <div className="flex flex-col items-center gap-4 w-full">
           <h1 className="text-2xl font-bold text-purple-500">Delete Task</h1>
           <p className="text-center text-gray-600">
-            Are you sure you want to delete this task? This action cannot be undone.
+            Are you sure you want to delete this task? This action cannot be
+            undone.
           </p>
           <div className="mt-4 flex gap-4 w-full justify-center">
             <button
@@ -156,7 +178,10 @@ export default function GotomyTasks() {
         </div>
       </Modal>
 
-      <a href="#top" className="underline text-purple-500 pt-2 pb-10 text-center w-full block">
+      <a
+        href="#top"
+        className="underline text-purple-500 pt-2 pb-10 text-center w-full block"
+      >
         Back To Top
       </a>
     </div>
